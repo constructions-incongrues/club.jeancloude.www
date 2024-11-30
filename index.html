@@ -6,7 +6,8 @@
         body {
             background-image: url("logo.jpg");
             background-repeat: no-repeat;
-            background-size: 100% 100%;
+            background-size: cover;
+            background-position: center;
         }
         body a {
             display: block;
@@ -17,7 +18,7 @@
     </style>
 </head>
     <body>
-        <audio autoplay src="VIP-11.mp3"></audio>
-        <a href="https://vip.jeancloude.club" target="_blank" title="Let's cloude !"></a>
+        <audio src="VIP-11.mp3" id="audio"></audio>
+        <a href="https://vip.jeancloude.club" target="_blank" title="Let's cloude !" onclick="var audio = document.getElementById('audio'); audio.volume = 1; audio.play(); return true;"></a>
     </body>
 </html>
