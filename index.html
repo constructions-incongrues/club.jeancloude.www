@@ -1,7 +1,7 @@
 <html>
 <head>
     <!-- Titre de la page -->
-    <title>Jean-Cloude - Le Cloude du Spectacle</title>
+    <title>Jean-Cloude</title>
 
     <!-- Favicon et icônes pour différents appareils -->
     <link rel="icon" href="tete_noire.png" type="image/png">
@@ -19,13 +19,14 @@
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/manifest.json">
+    
     <!-- Couleur du thème pour les applications Windows -->
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
     <!-- Balises Meta Open Graph pour le partage sur les réseaux sociaux -->
-    <meta property="og:title" content="Jean-Cloude - Le Cloude du Spectacle">
+    <meta property="og:title" content="Jean-Cloude">
     <meta property="og:description" content="Bienvenue sur Jean-Cloude, le site du spectacle !">
     <meta property="og:image" content="https://jeancloude.club/android-icon-192x192.png">
     <meta property="og:url" content="https://jeancloude.club">
@@ -49,9 +50,37 @@
 </head>
 <body>
     <!-- Audio à jouer lors du clic sur le lien -->
-    <audio src="audio/VIP-11.mp3" id="audio"></audio>
+    <audio id="audio"></audio>
 
     <!-- Lien vers le site VIP avec lecture audio au clic -->
-    <a href="https://vip.jeancloude.club" target="_blank" title="Let's cloude !" onclick="var audio = document.getElementById('audio'); audio.volume = 1; audio.play(); return true;"></a>
+    <a href="https://vip.jeancloude.club" target="_blank" title="Let's cloude !" onclick="playRandomAudio(); return true;"></a>
+
+    <script>
+        function playRandomAudio() {
+            var audioFiles = [
+                'audio/VIP-1.mp3',
+                'audio/VIP-2.mp3',
+                'audio/VIP-3.mp3',
+                'audio/VIP-4.mp3',
+                'audio/VIP-5.mp3',
+                'audio/VIP-6.mp3',
+                'audio/VIP-8.mp3',
+                'audio/VIP-9.mp3',
+                'audio/VIP-10.mp3',
+                'audio/VIP-11.mp3',
+                'audio/VIP-12.mp3',
+                'audio/VIP-13.mp3',
+                'audio/VIP-14.mp3',
+                'audio/VIP-15.mp3',
+                'audio/VIP-16.mp3',
+                'audio/VIP-17.mp3'
+            ];
+            var randomIndex = Math.floor(Math.random() * audioFiles.length);
+            var audio = document.getElementById('audio');
+            audio.src = audioFiles[randomIndex];
+            audio.volume = 1;
+            audio.play();
+        }
+    </script>
 </body>
 </html>
